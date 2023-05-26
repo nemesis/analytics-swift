@@ -31,7 +31,8 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "Segment",
-            dependencies: ["Sovran"]),
+            dependencies: ["Sovran"],
+            swiftSettings: [.unsafeFlags(["-Xfrontend", "-enable-implicit-dynamic"])]),
         .testTarget(
             name: "Segment-Tests",
             dependencies: ["Segment"]),
